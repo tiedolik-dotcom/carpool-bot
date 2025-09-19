@@ -1,4 +1,5 @@
 import logging
+import os
 from aiogram import Bot, Dispatcher, types
 from aiogram.utils import executor
 import sqlite3
@@ -6,7 +7,8 @@ from datetime import datetime, timedelta
 
 logging.basicConfig(level=logging.INFO)
 
-TOKEN = "8268554962:AAGnW2I4rPfzAv_aHnfpDwV4Q-Bi4_PvD9M"
+# Токен берём из переменной окружения
+TOKEN = os.getenv("BOT_TOKEN")
 bot = Bot(token=TOKEN)
 dp = Dispatcher(bot)
 
